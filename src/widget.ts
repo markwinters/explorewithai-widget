@@ -69,7 +69,7 @@ export class Widget {
   }
 
   refreshPageData(): void {
-    // Re-reads page data for SPA navigation support
+    // Data is collected fresh on each provider click; no caching needed.
   }
 
   private render(): void {
