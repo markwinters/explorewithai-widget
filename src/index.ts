@@ -6,6 +6,7 @@ let widget: Widget | null = null;
 function init(config?: Partial<Config>): Widget {
   if (widget) {
     if (config) widget.updateConfig(config);
+    widget.init();
     return widget;
   }
 

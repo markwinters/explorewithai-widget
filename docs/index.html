@@ -443,16 +443,9 @@
       });
     }
 
-    const stage = document.getElementById('preview-stage');
-    let demoWidget = null;
-
     function initDemo(theme, position, label) {
-      if (demoWidget) {
-        demoWidget.destroy();
-        demoWidget = null;
-      }
       if (typeof ExploreAI !== 'undefined') {
-        demoWidget = ExploreAI.init({ theme, position, label });
+        ExploreAI.init({ theme, position, label });
       }
     }
 
