@@ -46,6 +46,8 @@ Use `data-*` attributes on the script tag:
 | `gemini` | Gemini |
 | `perplexity` | Perplexity |
 | `copilot` | Microsoft Copilot |
+| `grok` | Grok |
+| `deepseek` | DeepSeek |
 
 ## JavaScript API
 

@@ -12,7 +12,7 @@ export const DEFAULTS: Config = {
   theme: 'auto',
   position: 'bottom-right',
   label: 'Explore With AI',
-  providers: ['chatgpt', 'claude', 'gemini', 'perplexity', 'copilot'],
+  providers: ['chatgpt', 'claude', 'gemini', 'perplexity', 'copilot', 'grok', 'deepseek'],
 };
 
 export interface PageData {
