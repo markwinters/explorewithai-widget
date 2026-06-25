@@ -62,10 +62,8 @@ export const PROVIDERS: Record<string, Provider> = {
     id: 'copilot',
     name: 'Copilot',
     icon: COPILOT,
-    generateUrl: (data) =>
-      `https://copilot.microsoft.com/?q=${encodeURIComponent(
-        buildPrompt(data)
-      )}`,
+    generateUrl: () =>
+      `https://copilot.microsoft.com`,
   },
 };
 
