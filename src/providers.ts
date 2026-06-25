@@ -46,8 +46,8 @@ export const PROVIDERS: Record<string, Provider> = {
     id: 'gemini',
     name: 'Gemini',
     icon: GEMINI,
-    generateUrl: (data) =>
-      `https://gemini.google.com/app?q=${encodeURIComponent(buildPrompt(data))}`,
+    generateUrl: () =>
+      `https://gemini.google.com/app`,
   },
   perplexity: {
     id: 'perplexity',
