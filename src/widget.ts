@@ -45,7 +45,6 @@ export class Widget {
 
     this.render();
     this.bindListeners();
-    this.handleThemeChange();
   }
 
   destroy(): void {
@@ -65,7 +64,7 @@ export class Widget {
     this.providers = getEnabledProviders(this.config.providers);
     if (this.host) {
       this.render();
-      this.handleThemeChange();
+      this.bindDomListeners();
     }
   }
 
@@ -92,7 +91,7 @@ export class Widget {
     this.root.appendChild(this.panel);
   }
 
-  private bindListeners(): void {
+  private bindDomListeners(): void {
     this.btn?.addEventListener('click', () => this.toggle());
 
     this.btn?.addEventListener('keydown', (e) => {
@@ -105,6 +104,13 @@ export class Widget {
 
     this.overlay?.addEventListener('click', () => this.close());
     this.overlay?.addEventListener('touchstart', () => this.close());
+  }
+
+  private globalListenersBound = false;
+
+  private bindGlobalListeners(): void {
+    if (this.globalListenersBound) return;
+    this.globalListenersBound = true;
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && this.isOpen) {
@@ -129,19 +135,11 @@ export class Widget {
           updateTheme(this.root, 'auto');
         }
       });
-
-    window.addEventListener('popstate', () => {
-      // Can refresh page data for SPAs
-    });
   }
 
-  private handleThemeChange(): void {
-    if (this.config.theme !== 'auto') return;
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', () => {
-        if (this.root) updateTheme(this.root, 'auto');
-      });
+  private bindListeners(): void {
+    this.bindDomListeners();
+    this.bindGlobalListeners();
   }
 
   private toggle(): void {
