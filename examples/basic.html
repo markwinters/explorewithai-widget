@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Example page demonstrating the Explore With AI widget" />
+  <title>My Website — Explore With AI</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: #fff;
+      color: #111;
+      line-height: 1.6;
+      padding: 48px 24px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 2.25rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.025em; }
+    h2 { font-size: 1.5rem; font-weight: 600; margin: 32px 0 12px; }
+    p { margin-bottom: 16px; color: #52525b; }
+    .hero {
+      background: linear-gradient(135deg, #0a0a0b 0%, #27272a 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 48px 32px;
+      margin-bottom: 32px;
+    }
+    .hero h1 { color: #fff; }
+    .hero p { color: #a1a1aa; font-size: 1.125rem; }
+    .card {
+      border: 1px solid #e4e4e7;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    .card h3 { margin-bottom: 8px; }
+    .card p { margin-bottom: 0; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>Welcome to My Website</h1>
+    <p>This example page demonstrates the Explore With AI widget. Click the button in the bottom-right corner to try it.</p>
+  </div>
+
+  <h2>How It Works</h2>
+  <p>The widget collects the current page URL, title, and meta description, then sends this data to your chosen AI provider when you click an option in the menu.</p>
+
+  <h2>Features</h2>
+
+  <div class="card">
+    <h3>🔗 Universal Bridge</h3>
+    <p>Works with ChatGPT, Claude, Gemini, Perplexity, and Copilot. Your page data is sent directly to the provider you select.</p>
+  </div>
+
+  <div class="card">
+    <h3>🎨 Zero Configuration</h3>
+    <p>Add one script tag and you're done. The widget automatically detects your page content and renders a polished floating button.</p>
+  </div>
+
+  <div class="card">
+    <h3>🌓 Theme Aware</h3>
+    <p>Automatically matches your system's light/dark preference. Can also be forced via <code>data-theme</code> attribute.</p>
+  </div>
+
+  <script
+    src="https://cdn.jsdelivr.net/gh/explorewithai/widget@latest/dist/explore-ai.min.js"
+    data-theme="auto"
+    data-position="bottom-right"
+    data-label="Explore With AI">
+  </script>
+</body>
+</html>

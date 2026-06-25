@@ -1,0 +1,299 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:host {
+  all: initial;
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ── Theme Variables ────────────────────────────────────────── */
+
+:host,
+[data-ewai-theme="light"] {
+  --ewai-bg: #ffffff;
+  --ewai-text: #0a0a0b;
+  --ewai-text-secondary: #6b7280;
+  --ewai-border: #e5e7eb;
+  --ewai-hover: #f3f4f6;
+  --ewai-shadow: rgba(0, 0, 0, 0.08);
+  --ewai-shadow-lg: rgba(0, 0, 0, 0.12);
+  --ewai-btn-bg: #0a0a0b;
+  --ewai-btn-text: #ffffff;
+  --ewai-btn-hover-bg: #27272a;
+  --ewai-btn-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --ewai-btn-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.16);
+  --ewai-overlay: rgba(0, 0, 0, 0.04);
+}
+
+[data-ewai-theme="dark"] {
+  --ewai-bg: #18181b;
+  --ewai-text: #fafafa;
+  --ewai-text-secondary: #a1a1aa;
+  --ewai-border: #27272a;
+  --ewai-hover: #27272a;
+  --ewai-shadow: rgba(0, 0, 0, 0.3);
+  --ewai-shadow-lg: rgba(0, 0, 0, 0.5);
+  --ewai-btn-bg: #fafafa;
+  --ewai-btn-text: #0a0a0b;
+  --ewai-btn-hover-bg: #e4e4e7;
+  --ewai-btn-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --ewai-btn-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --ewai-overlay: rgba(255, 255, 255, 0.04);
+}
+
+/* ── Button ─────────────────────────────────────────────────── */
+
+.ewai-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 999px;
+  background: var(--ewai-btn-bg);
+  color: var(--ewai-btn-text);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: var(--ewai-btn-shadow);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.2s ease;
+  position: fixed;
+  z-index: 2147483647;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+.ewai-btn:hover {
+  transform: scale(1.05);
+  box-shadow: var(--ewai-btn-shadow-hover);
+  background: var(--ewai-btn-hover-bg);
+}
+
+.ewai-btn:active {
+  transform: scale(0.97);
+}
+
+.ewai-btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.ewai-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ewai-btn-icon svg {
+  display: block;
+}
+
+/* ── Positions ──────────────────────────────────────────────── */
+
+.ewai-pos-bottom-right {
+  bottom: 24px;
+  right: 24px;
+}
+
+.ewai-pos-bottom-left {
+  bottom: 24px;
+  left: 24px;
+}
+
+.ewai-pos-top-right {
+  top: 24px;
+  right: 24px;
+}
+
+.ewai-pos-top-left {
+  top: 24px;
+  left: 24px;
+}
+
+/* ── Panel ──────────────────────────────────────────────────── */
+
+.ewai-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  background: var(--ewai-overlay);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.ewai-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ewai-panel {
+  position: fixed;
+  z-index: 2147483647;
+  background: var(--ewai-bg);
+  border: 1px solid var(--ewai-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px var(--ewai-shadow-lg);
+  padding: 8px;
+  min-width: 220px;
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+  pointer-events: none;
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ewai-panel.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.ewai-panel-header {
+  padding: 8px 12px 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ewai-text-secondary);
+  margin-bottom: 4px;
+}
+
+.ewai-provider-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ewai-text);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ewai-provider-item:hover {
+  background: var(--ewai-hover);
+}
+
+.ewai-provider-item:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+.ewai-provider-item:active {
+  background: var(--ewai-border);
+}
+
+.ewai-provider-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ewai-provider-icon svg {
+  display: block;
+  color: var(--ewai-text-secondary);
+}
+
+/* ── Animations ─────────────────────────────────────────────── */
+
+@keyframes ewai-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ewai-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ewai-provider-item {
+  animation: ewai-slide-up 0.2s ease both;
+}
+
+.ewai-provider-item:nth-child(1) { animation-delay: 0ms; }
+.ewai-provider-item:nth-child(2) { animation-delay: 30ms; }
+.ewai-provider-item:nth-child(3) { animation-delay: 60ms; }
+.ewai-provider-item:nth-child(4) { animation-delay: 90ms; }
+.ewai-provider-item:nth-child(5) { animation-delay: 120ms; }
+.ewai-provider-item:nth-child(6) { animation-delay: 150ms; }
+.ewai-provider-item:nth-child(7) { animation-delay: 180ms; }
+
+/* ── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .ewai-btn {
+    height: 44px;
+    padding: 0 20px;
+    font-size: 13px;
+  }
+
+  .ewai-pos-bottom-right {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .ewai-pos-bottom-left {
+    bottom: 16px;
+    left: 16px;
+  }
+
+  .ewai-pos-top-right {
+    top: 16px;
+    right: 16px;
+  }
+
+  .ewai-pos-top-left {
+    top: 16px;
+    left: 16px;
+  }
+
+  .ewai-panel {
+    min-width: 200px;
+    margin: 0 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ewai-btn,
+  .ewai-panel,
+  .ewai-overlay,
+  .ewai-provider-item {
+    animation: none !important;
+    transition: none !important;
+  }
+}

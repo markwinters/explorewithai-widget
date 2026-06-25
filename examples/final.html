@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Final example loading the built widget from the local dist file" />
+  <meta property="og:title" content="Explore With AI — Final Test" />
+  <meta property="og:description" content="Testing the built widget bundle." />
+  <title>Explore With AI — Final Example</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: #fff;
+      color: #111;
+      line-height: 1.6;
+      padding: 48px 24px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 8px; }
+    p { color: #52525b; margin-bottom: 16px; }
+    hr { border: none; border-top: 1px solid #e4e4e7; margin: 32px 0; }
+    .card {
+      border: 1px solid #e4e4e7;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+    }
+    .card h3 { font-size: 1rem; margin-bottom: 4px; }
+    .card p { font-size: 0.875rem; margin-bottom: 0; color: #71717a; }
+  </style>
+</head>
+<body>
+  <h1>Final Example</h1>
+  <p>This page loads the widget from the local <code>dist/explore-ai.min.js</code> file. The floating button should appear in the bottom-right corner.</p>
+
+  <hr />
+
+  <div class="card">
+    <h3>How it works</h3>
+    <p>Click the ✨ Explore With AI button to open the provider menu. Select an AI platform to open this page's content in that tool.</p>
+  </div>
+
+  <div class="card">
+    <h3>What's collected</h3>
+    <p>Page URL, title, and meta description — nothing else. No analytics, no tracking, no backend.</p>
+  </div>
+
+  <div class="card">
+    <h3>Browser support</h3>
+    <p>Chrome, Edge, Safari, Firefox (last 2 major versions). Framework agnostic.</p>
+  </div>
+
+  <div class="card">
+    <h3>Light / Dark</h3>
+    <p>Auto-detects your system preference. Force with <code>data-theme="dark"</code> on the script tag.</p>
+  </div>
+
+  <script src="../dist/explore-ai.min.js" data-theme="auto" data-position="bottom-right"></script>
+</body>
+</html>
