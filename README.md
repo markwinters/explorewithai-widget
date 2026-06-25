@@ -7,7 +7,7 @@ A lightweight, framework-agnostic JavaScript widget that adds an "Explore With A
 Add one script tag:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/explorewithai/widget@latest/dist/explore-ai.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/markwinters/explorewithai-widget@latest/dist/explore-ai.min.js"></script>
 ```
 
 That's it. The widget appears as a floating button in the bottom-right corner.
@@ -18,7 +18,7 @@ Use `data-*` attributes on the script tag:
 
 ```html
 <script
-  src="https://cdn.jsdelivr.net/gh/explorewithai/widget@latest/dist/explore-ai.min.js"
+  src="https://cdn.jsdelivr.net/gh/markwinters/explorewithai-widget@latest/dist/explore-ai.min.js"
   data-theme="dark"
   data-position="bottom-left"
   data-label="Ask AI"
