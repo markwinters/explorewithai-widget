@@ -324,6 +324,7 @@
           </select>
           <label for="pref-label">Label</label>
           <input id="pref-label" type="text" value="Explore With AI" />
+          <label><input id="pref-compact" type="checkbox" /> Compact</label>
         </div>
         <div class="preview-stage" id="preview-stage">
           <p>Widget appears <strong>in this preview area</strong> ↓</p>
@@ -351,6 +352,7 @@
         &nbsp;&nbsp;<span class="attr">data-position</span>=<span class="str">"bottom-left"</span><br />
         &nbsp;&nbsp;<span class="attr">data-label</span>=<span class="str">"Ask AI"</span><br />
         &nbsp;&nbsp;<span class="attr">data-providers</span>=<span class="str">"chatgpt,claude,gemini"</span><br />
+        &nbsp;&nbsp;<span class="attr">data-compact</span><br />
         <span class="tag">&gt;&lt;/script&gt;</span>
       </div>
 
@@ -387,6 +389,12 @@
             <td>Comma-separated IDs</td>
             <td>All</td>
             <td>Visible providers</td>
+          </tr>
+          <tr>
+            <td><code>data-compact</code></td>
+            <td><code>true</code> or omitted</td>
+            <td>—</td>
+            <td>Icon-only circular button. Auto-enabled on mobile.</td>
           </tr>
         </tbody>
       </table>
@@ -451,20 +459,27 @@
       });
     }
 
-    function initDemo(theme, position, label) {
+    function initDemo(theme, position, label, compact) {
       if (typeof ExploreAI !== 'undefined') {
-        ExploreAI.init({ theme, position, label });
+        ExploreAI.init({ theme, position, label, compact });
       }
     }
 
-    document.getElementById('pref-theme').addEventListener('change', (e) => {
-      initDemo(e.target.value, document.getElementById('pref-position').value, document.getElementById('pref-label').value);
+    function getDemoCompact() {
+      return document.getElementById('pref-compact').checked;
+    }
+
+    document.getElementById('pref-theme').addEventListener('change', () => {
+      initDemo(document.getElementById('pref-theme').value, document.getElementById('pref-position').value, document.getElementById('pref-label').value, getDemoCompact());
     });
-    document.getElementById('pref-position').addEventListener('change', (e) => {
-      initDemo(document.getElementById('pref-theme').value, e.target.value, document.getElementById('pref-label').value);
+    document.getElementById('pref-position').addEventListener('change', () => {
+      initDemo(document.getElementById('pref-theme').value, document.getElementById('pref-position').value, document.getElementById('pref-label').value, getDemoCompact());
     });
-    document.getElementById('pref-label').addEventListener('input', (e) => {
-      initDemo(document.getElementById('pref-theme').value, document.getElementById('pref-position').value, e.target.value);
+    document.getElementById('pref-label').addEventListener('input', () => {
+      initDemo(document.getElementById('pref-theme').value, document.getElementById('pref-position').value, document.getElementById('pref-label').value, getDemoCompact());
+    });
+    document.getElementById('pref-compact').addEventListener('change', () => {
+      initDemo(document.getElementById('pref-theme').value, document.getElementById('pref-position').value, document.getElementById('pref-label').value, getDemoCompact());
     });
   </script>
   <script src="https://cdn.jsdelivr.net/gh/markwinters/explorewithai-widget@main/dist/explore-ai.min.js"></script>

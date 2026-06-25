@@ -253,13 +253,31 @@
 .ewai-provider-item:nth-child(6) { animation-delay: 150ms; }
 .ewai-provider-item:nth-child(7) { animation-delay: 180ms; }
 
+/* ── Compact Mode ───────────────────────────────────────────── */
+
+.ewai-btn--compact {
+  width: 48px;
+  padding: 0;
+  justify-content: center;
+}
+
+.ewai-btn--compact .ewai-btn-label {
+  display: none;
+}
+
 /* ── Responsive ─────────────────────────────────────────────── */
 
 @media (max-width: 640px) {
   .ewai-btn {
     height: 44px;
-    padding: 0 20px;
+    width: 44px;
+    padding: 0;
+    justify-content: center;
     font-size: 13px;
+  }
+
+  .ewai-btn-label {
+    display: none;
   }
 
   .ewai-pos-bottom-right {

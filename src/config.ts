@@ -6,6 +6,7 @@ export interface Config {
   position: Position;
   label: string;
   providers: string[];
+  compact: boolean;
 }
 
 export const DEFAULTS: Config = {
@@ -13,6 +14,7 @@ export const DEFAULTS: Config = {
   position: 'bottom-right',
   label: 'Explore With AI',
   providers: ['chatgpt', 'claude', 'grok', 'perplexity'],
+  compact: false,
 };
 
 export interface PageData {
@@ -52,5 +54,6 @@ export function parseConfig(script: HTMLScriptElement): Config {
     providers: d.providers
       ? d.providers.split(',').map(p => p.trim().toLowerCase())
       : DEFAULTS.providers,
+    compact: d.compact === 'true' || d.compact === '' || DEFAULTS.compact,
   };
 }

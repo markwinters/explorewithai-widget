@@ -6,6 +6,9 @@ const SPARKLE_ICON = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height=
 export function createButton(config: Config): HTMLButtonElement {
   const btn = document.createElement('button');
   btn.className = `ewai-btn ewai-pos-${config.position}`;
+  if (config.compact) {
+    btn.classList.add('ewai-btn--compact');
+  }
   btn.setAttribute('aria-label', `Explore with AI — ${config.label}`);
   btn.setAttribute('aria-expanded', 'false');
   btn.setAttribute('aria-haspopup', 'true');
