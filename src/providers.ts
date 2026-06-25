@@ -23,6 +23,10 @@ const GROK = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width=
 
 const DEEPSEEK = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M5 12c0-4 3-7 7-7s6 2 7 5-1 5-3 6-4 2-7 2-4-2-4-6z" fill="#4F6BED"/><path d="M19 11c1.5 1 2 3 1.5 4.5" fill="none" stroke="#4F6BED" stroke-width="1.5" stroke-linecap="round"/></svg>`;
 
+const META = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="11" fill="#0064E0"/><path d="M12 5l1.5 4.5L18 11l-4.5 1.5L12 17l-1.5-4.5L6 11l4.5-1.5z" fill="white"/></svg>`;
+
+const MISTRAL = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M4 20V4l4 8 4-8 4 8 4-8v16" fill="none" stroke="#1EA0D8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
 // ── Prompt building ───────────────────────────────────────────
 
 function buildPrompt(data: PageData): string {
@@ -93,6 +97,20 @@ export const PROVIDERS: Record<string, Provider> = {
     icon: DEEPSEEK,
     generateUrl: () =>
       `https://chat.deepseek.com`,
+  },
+  meta: {
+    id: 'meta',
+    name: 'Meta AI',
+    icon: META,
+    generateUrl: () =>
+      `https://meta.ai`,
+  },
+  mistral: {
+    id: 'mistral',
+    name: 'Mistral',
+    icon: MISTRAL,
+    generateUrl: () =>
+      `https://chat.mistral.ai/chat`,
   },
 };
 
