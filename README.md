@@ -2,6 +2,8 @@
 
 A lightweight, framework-agnostic JavaScript widget that adds an "Explore With AI" button to any website. Visitors can open the current page in ChatGPT, Claude, Gemini, Perplexity, Copilot, and more.
 
+**[→ Live Demo & Docs](https://markwinters.github.io/explorewithai-widget/)**
+
 ## Installation
 
 Add one script tag:
