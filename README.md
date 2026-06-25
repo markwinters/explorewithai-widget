@@ -1,6 +1,6 @@
 # Explore With AI Widget
 
-A lightweight, framework-agnostic JavaScript widget that adds an "Explore With AI" button to any website. Visitors can open the current page in ChatGPT, Claude, Gemini, Perplexity, Copilot, and more.
+A lightweight, framework-agnostic JavaScript widget that adds an "Explore With AI" button to any website. Visitors can open the current page in ChatGPT, Claude, Gemini, Perplexity, Copilot, Grok, DeepSeek, Meta AI, Mistral, and more.
 
 **[→ Live Demo & Docs](https://markwinters.github.io/explorewithai-widget/)**
 
@@ -36,6 +36,7 @@ Use `data-*` attributes on the script tag:
 | `data-position` | `bottom-right`, `bottom-left`, `top-right`, `top-left` | `bottom-right` | Button position |
 | `data-label` | any string | `Explore With AI` | Button label text |
 | `data-providers` | comma-separated provider IDs | all | Visible providers |
+| `data-compact` | `true` or omitted | — | Icon-only circular button. Auto-enabled on mobile. |
 
 ### Providers
 
@@ -48,6 +49,8 @@ Use `data-*` attributes on the script tag:
 | `gemini` | Gemini | ❌ (opens app homepage) |
 | `copilot` | Microsoft Copilot | ❌ (opens app homepage) |
 | `deepseek` | DeepSeek | ❌ (opens app homepage) |
+| `meta` | Meta AI | ❌ (opens app homepage) |
+| `mistral` | Mistral | ❌ (opens app homepage) |
 
 > Only providers with native URL parameter support are shown by default. The others are available if explicitly added via `data-providers` but will open the app's homepage without a pre-filled prompt.
 
