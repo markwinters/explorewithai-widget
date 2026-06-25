@@ -39,15 +39,17 @@ Use `data-*` attributes on the script tag:
 
 ### Providers
 
-| ID | Name |
-|----|------|
-| `chatgpt` | ChatGPT |
-| `claude` | Claude |
-| `gemini` | Gemini |
-| `perplexity` | Perplexity |
-| `copilot` | Microsoft Copilot |
-| `grok` | Grok |
-| `deepseek` | DeepSeek |
+| ID | Name | Prompt pre-fill |
+|----|------|----------------|
+| `chatgpt` | ChatGPT | ✅ |
+| `claude` | Claude | ✅ |
+| `grok` | Grok | ✅ |
+| `perplexity` | Perplexity | ✅ |
+| `gemini` | Gemini | ❌ (opens app homepage) |
+| `copilot` | Microsoft Copilot | ❌ (opens app homepage) |
+| `deepseek` | DeepSeek | ❌ (opens app homepage) |
+
+> Only providers with native URL parameter support are shown by default. The others are available if explicitly added via `data-providers` but will open the app's homepage without a pre-filled prompt.
 
 ## JavaScript API
 
