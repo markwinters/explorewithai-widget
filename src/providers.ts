@@ -26,7 +26,16 @@ const DEEPSEEK = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" wi
 // ── Prompt building ───────────────────────────────────────────
 
 function buildPrompt(data: PageData): string {
-  return `Explore this page: ${data.title}\n${data.url}`;
+  return `Analyze this webpage.
+
+Title: ${data.title}
+Description: ${data.description || ''}
+URL: ${data.url}
+
+Provide:
+- Summary
+- Key points
+- Questions`;
 }
 
 // ── Provider definitions ──────────────────────────────────────
