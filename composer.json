@@ -2,7 +2,20 @@
     "name": "markwinters/explorewithai-widget",
     "description": "A lightweight, framework-agnostic JavaScript widget that adds an \"Explore With AI\" button to any website.",
     "type": "library",
-    "keywords": ["widget", "javascript", "ai", "chatgpt", "claude", "gemini", "perplexity", "assets"],
+    "keywords": [
+        "widget",
+        "javascript",
+        "frontend",
+        "assets",
+        "ai",
+        "llm",
+        "chatgpt",
+        "claude",
+        "gemini",
+        "perplexity",
+        "grok",
+        "copilot"
+    ],
     "homepage": "https://markwinters.github.io/explorewithai-widget/",
     "license": "MIT",
     "authors": [
@@ -13,7 +26,8 @@
     ],
     "support": {
         "issues": "https://github.com/markwinters/explorewithai-widget/issues",
-        "source": "https://github.com/markwinters/explorewithai-widget"
+        "source": "https://github.com/markwinters/explorewithai-widget",
+        "docs": "https://markwinters.github.io/explorewithai-widget/"
     },
     "require": {
         "php": ">=7.4"

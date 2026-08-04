@@ -1,5 +1,10 @@
 # Explore With AI Widget
 
+[![Packagist Version](https://img.shields.io/packagist/v/markwinters/explorewithai-widget.svg)](https://packagist.org/packages/markwinters/explorewithai-widget)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/markwinters/explorewithai-widget.svg)](https://packagist.org/packages/markwinters/explorewithai-widget)
+[![jsDelivr](https://img.shields.io/jsdelivr/gh/hm/markwinters/explorewithai-widget.svg)](https://www.jsdelivr.com/package/gh/markwinters/explorewithai-widget)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 A lightweight, framework-agnostic JavaScript widget that adds an "Explore With AI" button to any website. Visitors can open the current page in ChatGPT, Claude, Gemini, Perplexity, Copilot, Grok, DeepSeek, Meta AI, Mistral, and more.
 
 **[→ Live Demo & Docs](https://markwinters.github.io/explorewithai-widget/)**
