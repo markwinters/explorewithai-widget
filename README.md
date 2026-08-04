@@ -14,6 +14,18 @@ Add one script tag:
 
 That's it. The widget appears as a floating button in the bottom-right corner.
 
+### Composer (PHP projects)
+
+```bash
+composer require markwinters/explorewithai-widget
+```
+
+Then serve or copy the bundled file from `vendor/markwinters/explorewithai-widget/dist/explore-ai.min.js`, e.g. in a Laravel Blade view:
+
+```php
+<script src="{{ asset('vendor/explorewithai/explore-ai.min.js') }}"></script>
+```
+
 ## Configuration
 
 Use `data-*` attributes on the script tag:
